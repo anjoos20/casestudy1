@@ -1,7 +1,7 @@
-function getAPI(){
+function displayTodo(){
+    document.getElementById("validlogin").innerHTML="";
     //Creatimg an XHR object
     // *****
-    console.log("Inside getAPI");
     var xhr = new XMLHttpRequest();
     xhr.open("GET","https://jsonplaceholder.typicode.com/todos");
     xhr.send();
@@ -10,11 +10,8 @@ function getAPI(){
         //condition
         if (this.readyState==4){
             if (this.status==200){
-            // document.getElementById("demo").innerHTML = this.responseText;
-            // alert("successful read")
-            // alert(xhr.responseText);
+            // Parsing the Json data format to JS obtect format
             var resultData = JSON.parse(xhr.responseText);
-            var htmlContent = "";
             let table=document.getElementById("resultArea");
             for(let i=0;i<resultData.length;i++){
                 var currentRecord=resultData[i];
@@ -55,6 +52,7 @@ function getAPI(){
 }
 }
 
+// Promise feature used to manage  asynchronous execution
 var count=0;
 function checkCounter(){
     let promise = new Promise(function(resolve,reject){

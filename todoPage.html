@@ -19,16 +19,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <div class="topnav">
         <a class="active" href="cshome.html">Home</a>
-        <div class="login-container">
+        <div class="login-tabs">
           <form>
-            <input type="button" value="Todo" onclick="getAPI()">
+            <input type="button" value="To Do list" onclick="displayTodo()">
             <input type="button" value="Logout" onclick="logout()">
          </form>
         </div>
       </div>
-      <!-- <h3 id="loginreq">Here the the todo list for the day</h3> -->
+      <h5 id="validlogin">Welcome! Please press the "To Do list" button to access the list</h5> 
       <table class="todo-table">
-          <thead>
+          <thead id="tableheader">
             <tr>
               <td>Id</td>
               <td>Title</td>
